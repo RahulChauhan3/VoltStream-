@@ -1,0 +1,16 @@
+{
+  "name": "voltstream",
+  "version": "1.0.0",
+  "description": "Smart-city EV charging & power grid load forecasting dashboard (MERN)",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install --prefix server && npm install --prefix client",
+    "dev": "concurrently -n api,web -c cyan,magenta \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "build": "npm install --prefix client && npm run build --prefix client",
+    "start": "npm install --prefix server --omit=dev && node server/src/index.js",
+    "test": "npm test --prefix server"
+  },
+  "devDependencies": { "concurrently": "^9.0.1" },
+  "engines": { "node": ">=18" },
+  "license": "MIT"
+}

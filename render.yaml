@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: voltstream
+    runtime: node
+    buildCommand: npm run install:all && npm run build
+    startCommand: node server/src/index.js
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
